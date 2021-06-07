@@ -109,9 +109,11 @@ AST& AST::simplify(map<string, string>& m)
         curr_ = curr_->right_;
         return simplify(m);
     } else {
-        if(((curr_->left_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->left_->tok_.value_) == 0) && 
+        if if(((curr_->left_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->left_->tok_.value_) == 0) && 
             (curr_->right_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->right_->tok_.value_) != 0)) || 
             ((curr_->left_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->left_->tok_.value_) != 0) && 
+            (curr_->right_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->right_->tok_.value_) == 0)) ||
+            ((curr_->left_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->left_->tok_.value_) == 0) || 
             (curr_->right_->tok_.type_ == Tokenizer::TokType::VARIABLE && m.count(curr_->right_->tok_.value_) == 0)))
         {
             if(m.count(curr_->left_->tok_.value_) > 0){
