@@ -9,6 +9,14 @@
 #include <map>
 using namespace std;
 
+/*
+ * Calculator.h
+ * Omar Ahmed
+ * CSS 342
+ * 6/6/2021 
+ * 
+ */
+
 class Calculator
 {
 private:

@@ -9,6 +9,13 @@
 #define COUNT 10
 using namespace std;
 
+/*
+ * Calculator.cpp
+ * Omar Ahmed
+ * CSS 342
+ * 6/6/2021 
+ * 
+ */
 
 
 
@@ -166,41 +173,3 @@ std::ostream& operator<<(std::ostream& os, Calculator& calc)
     return os;
 }
 
-// int main()
-// {
-    
-//     // Calculator::ITokStream str(cin);
-//     // Calculator::Token t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13;
-//     // t1.value_ = "5";
-//     // t2.value_ = "x";
-//     // t3.value_ = "4";
-//     // t4.value_ = "*";
-//     // t5.value_ = "6";
-//     // t6.value_ = "2";
-//     // t7.value_ = "/";
-//     // t8.value_ = "+";
-//     // t9.value_ = "8";
-//     // t10.value_ = "2";
-//     // t11.value_ = "+";
-//     // t12.value_ = "-";
-//     // t13.value_ = "*";
-//     // str >> t1 >> t2 >> t3 >> t4 >> t5 >> t6 >> t7 >> t8 >> t9 >> t10 >> t11 >> t12 >> t13;
-//     // vector<Calculator::Token> v{t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13};
-//     // for(int i = 0; i < v.size(); i++){
-//     //     cout << v[i].value_ << endl;
-//     // }
-//     // Calculator::AST tree(v);
-//     // map<string, string> mapp;
-//     // // cout << tree.toInfix(tree.root_) << endl;
-//     // tree.simplify(mapp);
-
-//     // cout << tree.toInfix(tree.root_) << endl;
-
-//     Calculator c;
-    
-//     for(int i = 0; i < 11111; i++){
-//         cin >> c;
-//         cout << c << endl << endl;
-//     }
-//     return 0;
-// }
