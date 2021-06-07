@@ -12,10 +12,9 @@ class Calculator
 {
 private:
     enum class TokType {OPERATOR, VARIABLE, NUMBER, LPAREN, RPAREN, END};
-    
-    
+    string input_;
+    map<string, string> variableMap;
 public:
-    
     struct Token
     {
         Token(TokType t = TokType::END, string v = "");
@@ -29,8 +28,9 @@ public:
         ITokStream(istream& inputStream);
         ITokStream& operator >>(Token& rhs);
         explicit operator bool() const;
-    private:
         bool isOperator(string s);
+    private:
+        
         istream& is_;
     };
     
@@ -55,7 +55,7 @@ public:
         AST(vector<Token>& postfixExpr);
         ~AST();
         string process(string left, string right, string parent);
-        AST& simplify(map<string, int>& m);
+        AST& simplify(map<string, string>& m);
         AST& operator =(const AST& tree);
         Node* root_;
         string str = "";
@@ -66,5 +66,18 @@ public:
 
         void print2DUtil(AST::Node* root, int space);
         void print2D(Node *root);
-    };    
+    };
+
+    int isAssignment(string& s);
+    bool variablized;
+    string output_;
+    vector<Token> tokenizer(std::istream& is, string s);
+
+    int preced(string s);
+    vector<Token> postFixConverter(vector<Token>& v);
+
+    friend std::istream& operator>>(std::istream& is, Calculator& calc);
+
+    friend std::ostream& operator<<(std::ostream& os, Calculator& calc);
+
 };
