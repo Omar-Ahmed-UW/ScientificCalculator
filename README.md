@@ -1,4 +1,4 @@
-#ScientificCalculator
+# ScientificCalculator
 C++ scientific calculator can handle single letter lower or upper case variables or numbers as input.
 
 Operations that can be performed: addition, subtraction, division, multiplication, raising to the power.
